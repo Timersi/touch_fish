@@ -29,18 +29,9 @@ int main(void)
 	{
 		if (temp >= temp_set)
 		{
-			if((temp_set-temp)>3)
+			if((temp-temp_set)>3)
 			switch(temp-temp_set)
 			{
-				case 1:
-					water_on_add+=1;	
-					break;
-				case 2:
-					water_on_add+=2;
-					break;
-				case 3:
-					water_on_add+=3;
-					break;
 				case 4:
 					water_on_add+=4;
 					break;
@@ -65,18 +56,9 @@ int main(void)
 		}
 		else if(temp<temp_set)
 		{
-			if((temp-temp_set)>3)
+			if((temp_set-temp)>3)
 			switch(temp-temp_set)
 			{
-				case -1:
-					cnt_timer_add+=1;
-					break;
-				case -2:
-					cnt_timer_add+=2;
-					break;
-				case -3:
-					cnt_timer_add+=3;
-					break;
 				case -4:
 					cnt_timer_add+=4;
 					break;
@@ -102,7 +84,7 @@ int main(void)
 		}
 		if(water<=water_set)
 		{
-			if(((int)(water-water_set))>30)
+			if(((int)(water_set-water))>30)
 			switch((int)((water-water_set)/10))
 			{
 				case 10:
@@ -126,15 +108,6 @@ int main(void)
 				case 4:
 					water_on_add+=7;
 					break;
-				case 3:
-					water_on_add+=8;
-					break;
-				case 2:
-					water_on_add+=9;
-					break;
-				case 1:
-					water_on_add+=10;
-					break;
 				
 			}
 		}
@@ -143,18 +116,6 @@ int main(void)
 			if(((int)(water-water_set))>30)
 			switch((int)((water-water_set)/10))
 			{
-				case -1:
-					cnt_timer_add+=1;
-					moto_on_add+=1;
-					break;
-				case -2:
-					cnt_timer_add+=2;
-					moto_on_add+=2;
-					break;
-				case -3:
-					cnt_timer_add+=3;
-					moto_on_add+=3;
-					break;
 				case -4:
 					cnt_timer_add+=4;
 					moto_on_add+=4;
@@ -191,7 +152,7 @@ int main(void)
 		if(humi>=humi_set)
 		{
 			if((humi-humi_set)>5)
-			switch(humi-humi_set)
+			switch(humi_set-humi)
 			{
 				case -1:
 					cnt_timer_add+=1;
@@ -244,21 +205,6 @@ int main(void)
 					break;
 				case 6:
 					moto_on_add+=6;
-					break;
-				case 5:
-					moto_on_add+=5;
-					break;
-				case 4:
-					moto_on_add+=4;
-					break;
-				case 3:
-					moto_on_add+=3;
-					break;
-				case 2:
-					moto_on_add+=2;
-					break;
-				case 1:
-					moto_on_add+=1;
 					break;
 			}
 		}
