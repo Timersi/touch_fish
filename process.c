@@ -40,7 +40,8 @@ int main(void)
 	int temp_set,water_set,humi_set;
 	while(1)
 	{
-		if (temp >= temp_set){
+		if (temp >= temp_set)
+		{
 			switch(temp-temp_set)
 			{
 				case 1:
@@ -108,7 +109,6 @@ int main(void)
 				case -10:
 					cnt_timer_add+=10;
 					break;
-			}
 			}
 		}
 		if(water<=water_set)
@@ -195,6 +195,44 @@ int main(void)
 
 			}
 		}
+/*****************************温度调整设置****************/		
+		if(humi>=humi_set)
+		{
+			switch(humi-humi_set)
+			{
+				case -1:
+					cnt_timer_add+=1;
+					break;
+				case -2:
+					cnt_timer_add+=2;
+					break;
+				case -3:
+					cnt_timer_add+=3;
+					break;
+				case -4:
+					cnt_timer_add+=4;
+					break;
+				case -5:
+					cnt_timer_add+=5;
+					break;
+				case -6:
+					cnt_timer_add+=6;
+					break;
+				case -7:
+					cnt_timer_add+=7;
+					break;
+				case -8:
+					cnt_timer_add+=8;
+					break;
+				case -9:
+					cnt_timer_add+=9;
+					break;
+				case -10:
+					cnt_timer_add+=10;
+					break;
+			}
+		}
+
 
 /***********************开关操作处理**********************/				
 		if(water_on_add==150)
