@@ -7,19 +7,6 @@
 
 #include<stdio.h>
 
-typedef enum{
-	first=1,
-	second,
-	third,
-	fourth,
-	fifth,
-	sixth,
-	seventh,
-	eighth,
-	nineth,
-	tenth;
-};
-
 void moto_on(){
 
 }
@@ -42,6 +29,7 @@ int main(void)
 	{
 		if (temp >= temp_set)
 		{
+			if((temp_set-temp)>3)
 			switch(temp-temp_set)
 			{
 				case 1:
@@ -77,6 +65,7 @@ int main(void)
 		}
 		else if(temp<temp_set)
 		{
+			if((temp-temp_set)>3)
 			switch(temp-temp_set)
 			{
 				case -1:
@@ -113,6 +102,7 @@ int main(void)
 		}
 		if(water<=water_set)
 		{
+			if(((int)(water-water_set))>30)
 			switch((int)((water-water_set)/10))
 			{
 				case 10:
@@ -150,6 +140,7 @@ int main(void)
 		}
 		else if(water>water_set)
 		{
+			if(((int)(water-water_set))>30)
 			switch((int)((water-water_set)/10))
 			{
 				case -1:
@@ -195,9 +186,11 @@ int main(void)
 
 			}
 		}
+
 /*****************************温度调整设置****************/		
 		if(humi>=humi_set)
 		{
+			if((humi-humi_set)>5)
 			switch(humi-humi_set)
 			{
 				case -1:
@@ -232,11 +225,41 @@ int main(void)
 					break;
 			}
 		}
-		else if(temp<temp_set)
+		else if(humi<humi_set)
 		{
-			switch(temp-temp_set)
+			if((humi_set-humi)>5)
+			switch(humi-humi_set)
 			{
-				
+				case 10:
+					moto_on_add+=10;
+					break;
+				case 9:
+					moto_on_add+=9;
+					break;
+				case 8:
+					moto_on_add+=8;
+					break;
+				case 7:
+					moto_on_add+=7;
+					break;
+				case 6:
+					moto_on_add+=6;
+					break;
+				case 5:
+					moto_on_add+=5;
+					break;
+				case 4:
+					moto_on_add+=4;
+					break;
+				case 3:
+					moto_on_add+=3;
+					break;
+				case 2:
+					moto_on_add+=2;
+					break;
+				case 1:
+					moto_on_add+=1;
+					break;
 			}
 		}
 
