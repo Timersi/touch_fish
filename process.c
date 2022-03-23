@@ -232,7 +232,13 @@ int main(void)
 					break;
 			}
 		}
-
+		else if(temp<temp_set)
+		{
+			switch(temp-temp_set)
+			{
+				
+			}
+		}
 
 /***********************开关操作处理**********************/				
 		if(water_on_add==150)
