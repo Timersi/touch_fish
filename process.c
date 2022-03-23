@@ -33,25 +33,25 @@ int main(void)
 			switch(temp-temp_set)
 			{
 				case 4:
-					water_on_add+=4;
+					water_on_add+=1;
 					break;
 				case 5:
-					water_on_add+=5;
+					water_on_add+=2;
 					break;
 				case 6:
-					water_on_add+=6;
+					water_on_add+=3;
 					break;
 				case 7:
-					water_on_add+=7;
+					water_on_add+=4;
 					break;
 				case 8:
-					water_on_add+=8;
+					water_on_add+=5;
 					break;
 				case 9:
-					water_on_add+=9;
+					water_on_add+=6;
 					break;
 				case 10:
-					water_on_add+=10;
+					water_on_add+=7;
 					break;
 		}
 		else if(temp<temp_set)
@@ -60,25 +60,25 @@ int main(void)
 			switch(temp-temp_set)
 			{
 				case -4:
-					cnt_timer_add+=4;
+					cnt_timer_add+=1;
 					break;
 				case -5:
-					cnt_timer_add+=5;
+					cnt_timer_add+=2;
 					break;
 				case -6:
-					cnt_timer_add+=6;
+					cnt_timer_add+=3;
 					break;
 				case -7:
-					cnt_timer_add+=7;
+					cnt_timer_add+=4;
 					break;
 				case -8:
-					cnt_timer_add+=8;
+					cnt_timer_add+=5;
 					break;
 				case -9:
-					cnt_timer_add+=9;
+					cnt_timer_add+=6;
 					break;
 				case -10:
-					cnt_timer_add+=10;
+					cnt_timer_add+=7;
 					break;
 			}
 		}
@@ -117,32 +117,32 @@ int main(void)
 			switch((int)((water-water_set)/10))
 			{
 				case -4:
+					cnt_timer_add+=1;
+					moto_on_add+=1;
+					break;
+				case -5:
+					cnt_timer_add+=2;
+					moto_on_add+=2;
+					break;
+				case -6:
+					cnt_timer_add+=3;
+					moto_on_add+=3;
+					break;
+				case -7:
 					cnt_timer_add+=4;
 					moto_on_add+=4;
 					break;
-				case -5:
+				case -8:
 					cnt_timer_add+=5;
 					moto_on_add+=5;
 					break;
-				case -6:
+				case -9:
 					cnt_timer_add+=6;
 					moto_on_add+=6;
 					break;
-				case -7:
+				case -10:
 					cnt_timer_add+=7;
 					moto_on_add+=7;
-					break;
-				case -8:
-					cnt_timer_add+=8;
-					moto_on_add+=8;
-					break;
-				case -9:
-					cnt_timer_add+=9;
-					moto_on_add+=9;
-					break;
-				case -10:
-					cnt_timer_add+=10;
-					moto_on_add+=10;
 					break;
 
 			}
@@ -154,35 +154,20 @@ int main(void)
 			if((humi-humi_set)>5)
 			switch(humi_set-humi)
 			{
-				case -1:
+				case -6:
 					cnt_timer_add+=1;
 					break;
-				case -2:
+				case -7:
 					cnt_timer_add+=2;
 					break;
-				case -3:
+				case -8:
 					cnt_timer_add+=3;
 					break;
-				case -4:
+				case -9:
 					cnt_timer_add+=4;
 					break;
-				case -5:
-					cnt_timer_add+=5;
-					break;
-				case -6:
-					cnt_timer_add+=6;
-					break;
-				case -7:
-					cnt_timer_add+=7;
-					break;
-				case -8:
-					cnt_timer_add+=8;
-					break;
-				case -9:
-					cnt_timer_add+=9;
-					break;
 				case -10:
-					cnt_timer_add+=10;
+					cnt_timer_add+=5;
 					break;
 			}
 		}
@@ -192,19 +177,19 @@ int main(void)
 			switch(humi-humi_set)
 			{
 				case 10:
-					moto_on_add+=10;
+					moto_on_add+=5;
 					break;
 				case 9:
-					moto_on_add+=9;
+					moto_on_add+=4;
 					break;
 				case 8:
-					moto_on_add+=8;
+					moto_on_add+=3;
 					break;
 				case 7:
-					moto_on_add+=7;
+					moto_on_add+=2;
 					break;
 				case 6:
-					moto_on_add+=6;
+					moto_on_add+=1;
 					break;
 			}
 		}
