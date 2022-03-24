@@ -7,7 +7,8 @@
 
 #include<stdio.h>
 
-void moto_on(){
+void moto_on()
+{
 
 }
 
