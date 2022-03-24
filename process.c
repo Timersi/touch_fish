@@ -25,6 +25,7 @@ int main(void)
 	int moto_bit=0,relay_bit=0,led_bit=0;
 	int temp,water,humi;
 	int temp_set,water_set,humi_set;
+	int moto_ustime=0,relay_ustime=0,led_ontime=0;
 	while(1)
 	{
 		if (temp >= temp_set)
@@ -119,30 +120,37 @@ int main(void)
 				case -4:
 					cnt_timer_add+=1;
 					moto_on_add+=1;
+					water_on_add-=3;
 					break;
 				case -5:
 					cnt_timer_add+=2;
 					moto_on_add+=2;
+					water_on_add-=4;
 					break;
 				case -6:
 					cnt_timer_add+=3;
 					moto_on_add+=3;
+					water_on_add-=5;
 					break;
 				case -7:
 					cnt_timer_add+=4;
 					moto_on_add+=4;
+					water_on_add-=6;
 					break;
 				case -8:
 					cnt_timer_add+=5;
 					moto_on_add+=5;
+					water_on_add-=7;
 					break;
 				case -9:
 					cnt_timer_add+=6;
 					moto_on_add+=6;
+					water_on_add-=8;
 					break;
 				case -10:
 					cnt_timer_add+=7;
 					moto_on_add+=7;
+					water_on_add-=9;
 					break;
 
 			}
@@ -195,22 +203,22 @@ int main(void)
 		}
 
 /***********************开关操作处理**********************/				
-		if(water_on_add==150)
+		if(water_on_add==1500)
 		{
 			relay_on();
-			delay_ms(2000);
-			~relay_on();
+			relay_ustime++;
 			water_on_add=0;
 		}
-		if(cnt_timer_add==3000)
+		if(cnt_timer_add==30000)
 		{
 			//led_on();
+			led_ontime++;
 			time_set_num+=0.5;
 		}
 		if(moto_on_add==100)
 		{
 			moto_on();
-
+			moto_ustime++;
 			moto_on_add=0;
 		}
 
