@@ -55,6 +55,7 @@ int main(void)
 				case 10:
 					water_on_add+=7;
 					break;
+			}
 		}
 		else if(temp<temp_set)
 		{
@@ -214,7 +215,7 @@ int main(void)
 		{
 			//led_on();
 			led_ontime++;
-			time_set_num+=0.5;
+			//time_set_num+=0.5;
 		}
 		if(moto_on_add==100)
 		{
