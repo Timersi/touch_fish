@@ -24,7 +24,7 @@ int main(void)
 {
 	int cnt_timer_add=0,water_on_add=0,moto_on_add=0;
 	int moto_bit=0,relay_bit=0,led_bit=0;
-	int temp,water,humi;
+	int temp,tmp2,humi;
 	int temp_set,water_set,humi_set;
 	int moto_ustime=0,relay_ustime=0,led_ontime=0;
 	while(1)
@@ -35,24 +35,31 @@ int main(void)
 			switch(temp-temp_set)
 			{
 				case 4:
+					cnt_timer_add-=1;
 					water_on_add+=1;
 					break;
 				case 5:
+					cnt_timer_add-=2;
 					water_on_add+=2;
 					break;
 				case 6:
+					cnt_timer_add-=3;
 					water_on_add+=3;
 					break;
 				case 7:
+					cnt_timer_add-=4;
 					water_on_add+=4;
 					break;
 				case 8:
+					cnt_timer_add-=5;
 					water_on_add+=5;
 					break;
 				case 9:
+					cnt_timer_add-=6;
 					water_on_add+=6;
 					break;
 				case 10:
+					cnt_timer_add-=7;
 					water_on_add+=7;
 					break;
 			}
@@ -64,31 +71,38 @@ int main(void)
 			{
 				case -4:
 					cnt_timer_add+=1;
+					water_on_add-=1;
 					break;
 				case -5:
 					cnt_timer_add+=2;
+					water_on_add-=2;
 					break;
 				case -6:
 					cnt_timer_add+=3;
+					water_on_add-=3;
 					break;
 				case -7:
 					cnt_timer_add+=4;
+					water_on_add-=4;
 					break;
 				case -8:
 					cnt_timer_add+=5;
+					water_on_add-=5;
 					break;
 				case -9:
 					cnt_timer_add+=6;
+					water_on_add-=6;
 					break;
 				case -10:
 					cnt_timer_add+=7;
+					water_on_add-=7;
 					break;
 			}
 		}
-		if(water<=water_set)
+		if(tmp2<=water_set)
 		{
-			if(((int)(water_set-water))>30)
-			switch((int)((water-water_set)/10))
+			if(((int)(water_set-tmp2))>30)
+			switch((int)((water_set-tmp2)/10))
 			{
 				case 10:
 					water_on_add+=1;	
@@ -114,10 +128,10 @@ int main(void)
 				
 			}
 		}
-		else if(water>water_set)
+		else if(tmp2>water_set)
 		{
-			if(((int)(water-water_set))>30)
-			switch((int)((water-water_set)/10))
+			if(((int)(tmp2-water_set))>30)
+			switch((int)((water_set-tmp2)/10))
 			{
 				case -4:
 					cnt_timer_add+=1;
@@ -165,41 +179,52 @@ int main(void)
 			switch(humi_set-humi)
 			{
 				case -6:
-					cnt_timer_add+=1;
+					cnt_timer_add-=1;
+					water_on_add+=1;
 					break;
 				case -7:
-					cnt_timer_add+=2;
+					cnt_timer_add-=2;
+					water_on_add-=2;
 					break;
 				case -8:
-					cnt_timer_add+=3;
+					cnt_timer_add-=3;
+					water_on_add-=3;
 					break;
 				case -9:
-					cnt_timer_add+=4;
+					cnt_timer_add-=4;
+					water_on_add-=4;
 					break;
 				case -10:
-					cnt_timer_add+=5;
+					cnt_timer_add-=5;
+					water_on_add-=5;
 					break;
 			}
 		}
 		else if(humi<humi_set)
 		{
 			if((humi_set-humi)>5)
-			switch(humi-humi_set)
+			switch(humi_set-humi)
 			{
 				case 10:
 					moto_on_add+=5;
+					water_on_add+=9;
+					cnt_timer_add+=5;
 					break;
 				case 9:
 					moto_on_add+=4;
+					cnt_timer_add+=5;
 					break;
 				case 8:
 					moto_on_add+=3;
+					cnt_timer_add+=5;
 					break;
 				case 7:
 					moto_on_add+=2;
+					cnt_timer_add+=5;
 					break;
 				case 6:
 					moto_on_add+=1;
+					cnt_timer_add+=5;
 					break;
 			}
 		}
